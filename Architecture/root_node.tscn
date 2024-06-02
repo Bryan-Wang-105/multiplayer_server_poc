@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://n3rv6u4bg6ok"]
+
+[ext_resource type="PackedScene" uid="uid://dkv1uo1q8xahn" path="res://Architecture/Main.tscn" id="1_6u3h5"]
+[ext_resource type="Script" path="res://Architecture/Main.gd" id="1_v8lq2"]
+
+[node name="Root Node" type="Node"]
+
+[node name="Main" type="Node" parent="."]
+script = ExtResource("1_v8lq2")
+
+[node name="Main Menu" parent="Main" instance=ExtResource("1_6u3h5")]
