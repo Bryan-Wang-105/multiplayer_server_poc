@@ -1,5 +1,8 @@
 extends Node
 
+# Scenes
+@onready var main: Node = $"."
+
 # Networking
 const DEFAULT_PORT: int = 9999
 
@@ -9,6 +12,7 @@ const printOn = true
 
 # Game State
 var connected_players = []
+var game_world
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +30,11 @@ func start_server() -> void:
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(port)
 	multiplayer.multiplayer_peer = peer
+	create_game()
+
+func create_game() -> void:
+	game_world = load("res://Architecture/game_world.tscn").instantiate()
+	main.add_child(game_world)
 
 func _peer_connected(id: int) -> void:
 	if printOn:
@@ -47,7 +56,7 @@ func _peer_connected(id: int) -> void:
 	var player_character = preload("res://player/player_character.tscn").instantiate()
 	player_character.set_multiplayer_authority(id)
 	
-	add_child(player_character)
+	game_world.add_child(player_character)
 	
 	_print_to_vbox("Peer %s connected and added to list of players [size: %s]." % [id, len(connected_players)])
 
