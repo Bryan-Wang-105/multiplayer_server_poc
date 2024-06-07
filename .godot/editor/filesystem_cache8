@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1717717254
+icon.svg::CompressedTexture2D::5437385991881480495::1717309883::1717309942::1::::<><>::
+::res://Architecture/::1717377383
+game_world.tscn::PackedScene::1033061018592217983::1717309883::0::1::::<><>::
+Main.gd::GDScript::-1::1717312657::0::1::::<>Node<>::
+Main.tscn::PackedScene::7906117554248695235::1717309883::0::1::::<><>::
+root_node.tscn::PackedScene::971328895396305986::1717377383::0::1::::<><>::uid://dkv1uo1q8xahn::::res://Architecture/Main.tscn<>res://Architecture/Main.gd
+::res://player/::1717377384
+MultiplayerSynchronizer.gd::GDScript::-1::1717312178::0::1::::<>MultiplayerSynchronizer<>::
+player_character.gd::GDScript::-1::1717313164::0::1::::<>Node<>::
+player_character.tscn::PackedScene::2443149698128031450::1717377384::0::1::::<><>::res://player/player_character.gd<>res://player/MultiplayerSynchronizer.gd

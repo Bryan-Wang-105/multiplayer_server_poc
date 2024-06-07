@@ -35,6 +35,10 @@ func start_server() -> void:
 func create_game() -> void:
 	game_world = load("res://Architecture/game_world.tscn").instantiate()
 	main.add_child(game_world)
+	var multiSpawner = MultiplayerSpawner.new()
+	multiSpawner.spawn_path = "Game World"
+	multiSpawner.add_spawnable_scene("res://player/player_character.tscn")
+	game_world.add_child(multiSpawner)
 
 func _peer_connected(id: int) -> void:
 	if printOn:
